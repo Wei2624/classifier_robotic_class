@@ -20,9 +20,10 @@ def classifier(img):
     input_img = pca_model.transform(input_img)
     result = model.predict(input_img)
     print result
+    return int(result[0])
 
 
 
 test = cv2.imread('corrosive/1.jpg',-1)
 
-classifier(test)
+print classifier(test)
