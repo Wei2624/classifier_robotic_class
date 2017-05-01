@@ -30,7 +30,7 @@ def classifier(img):
 if __name__ == '__main__':
     test = cv2.imread('corrosive/1.jpg',-1)
 
-    test = cv2.imread('test1.jpg',-1)
+test = cv2.imread('test1.jpg',-1)
 
-    print classifier(test)
+print classifier(test)
 
