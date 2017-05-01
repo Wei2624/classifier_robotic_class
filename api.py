@@ -24,6 +24,6 @@ def classifier(img):
 
 
 
-test = cv2.imread('corrosive/1.jpg',-1)
+test = cv2.imread('test.jpg',-1)
 
 print classifier(test)
