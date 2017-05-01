@@ -9,8 +9,12 @@ import csv
 from sklearn.externals import joblib
 from sklearn import svm
 
-pca_model = joblib.load("pca.pkl")
-model = joblib.load("classifier.pkl")
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+
+pca_model = joblib.load(os.path.join(dir_path, "pca.pkl"))
+model = joblib.load(os.path.join(dir_path, "classifier.pkl"))
 
 
 def classifier(img):
@@ -19,11 +23,11 @@ def classifier(img):
     input_img = input_img.reshape((19600))
     input_img = pca_model.transform(input_img)
     result = model.predict(input_img)
-    print result
+    print(result)
     return int(result[0])
 
 
+if __name__ == '__main__':
+    test = cv2.imread('corrosive/1.jpg',-1)
 
-test = cv2.imread('corrosive/1.jpg',-1)
-
-print classifier(test)
+    print classifier(test)
