@@ -9,6 +9,9 @@ import csv
 from sklearn.externals import joblib
 from sklearn import svm
 
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
