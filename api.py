@@ -23,7 +23,6 @@ def classifier(img):
     input_img = input_img.reshape((19600))
     input_img = pca_model.transform(input_img)
     result = model.predict(input_img)
-    print(result)
     return int(result[0])
 
 
@@ -33,4 +32,3 @@ if __name__ == '__main__':
     test = cv2.imread('test1.jpg',-1)
 
     print classifier(test)
-
